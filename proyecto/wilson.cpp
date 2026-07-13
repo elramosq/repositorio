@@ -11,6 +11,8 @@ int anadirArtefacto(Artefacto catalogo[], int cantidad) {
         cout << "--- REGISTRAR NUEVO ARTEFACTO ---" << endl;
         cout << "Ingrese codigo: ";
         cin >> catalogo[cantidad].codigo;
+        cout << "Ingrese el nombre del producto: ";
+        cin >> catalogo[cantidad].nombre; //en este commit estamos añadiendo el nombre
         cout << "Ingrese marca: ";
         cin >> catalogo[cantidad].marca;
         cout << "Ingrese stock: ";
@@ -30,12 +32,12 @@ void mostrarCatalogo(Artefacto catalogo[], int cantidad) {
     cout << "--- LISTA DE ARTEFACTOS ACTIVOS ---" << endl;
     if (cantidad > 0) {
         cout << "-----------------------------------------------------" << endl;
-        cout << left << setw(12) << "CODIGO" << setw(16) << "MARCA" << setw(12) << "STOCK" << "PRECIO" << endl;
+        cout << left << setw(12) << "CODIGO" << setw(18) << "NOMBRE" << setw(16) << "MARCA" << setw(12) << "STOCK" << "PRECIO" << endl;
         cout << "-----------------------------------------------------" << endl;
     }
     for (int i = 0; i < cantidad; i++) {
         if (catalogo[i].activo == true) {
-            cout << left << setw(12) << catalogo[i].codigo << setw(16) << catalogo[i].marca << setw(12) << catalogo[i].stock << "S/. " << catalogo[i].precio << endl;
+            cout << left << setw(12) << catalogo[i].codigo << setw(18) << catalogo[i].nombre << setw(16) << catalogo[i].marca << setw(12) << catalogo[i].stock << "S/. " << catalogo[i].precio << endl;
             contador = contador + 1;
         }
     }
