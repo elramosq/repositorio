@@ -30,10 +30,10 @@ int main()
                 mostrarCatalogo(catalogo, cantidadProductos);
                 break;
             case 3:
-                buscarArtefacto(catalogo, cantidadProductos);
+            	buscarArtefacto(catalogo, cantidadProductos);
                 break;
             case 4:
-                descontinuarProducto(catalogo, cantidadProductos);
+            	descontinuarProducto(catalogo, cantidadProductos);
                 break;
             case 5:
                 registrarVentas(catalogo, cantidadProductos);

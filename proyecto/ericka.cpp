@@ -1,13 +1,14 @@
 #include<iostream>
 #include"ericka.h"
-usingnamespace std;
+
+using namespace std;
 
 
 //Función para registar ventas
 void registrarVentas(Artefacto catalogo[ ], int cantidad)
 {
 	int codigoBuscado, cantidadDeseada;
-	cout<<"REGISTRAR VENTA";
+	cout<<"---REGISTRAR VENTA---"<<endl;
 	cout<<"Ingrese codigo del producto:";cin>>codigoBuscado;
 	
 	for(int i=0;i<cantidad;i++)
@@ -20,7 +21,7 @@ void registrarVentas(Artefacto catalogo[ ], int cantidad)
 				{
 					catalogo[i].stock =catalogo[i].stock-cantidadDeseada;
 					cout<<"\n---BOLETA DE VENTA---"<<endl;
-					cout<<"Producto: "<<catalogo[i].nombre<<" "<<catalogo[i]marca<<endl;
+					cout<<"Producto: "<<catalogo[i].nombre<<" "<<catalogo[i].marca<<endl;
 					cout<<"Cantidad: "<<cantidadDeseada<<endl;
 					cout<<"Total a pagar: S/."<<cantidadDeseada*catalogo[i].precio<<endl;
 					cout<<"-----------------------"<<endl;
