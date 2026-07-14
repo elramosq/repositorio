@@ -36,6 +36,26 @@ void buscarArtefacto(Artefacto catalogo[], int cantidad){
 		}
 		if (!encontrado) cout<<"\nAlerta: No se encontro el codigo."<<endl;
 	}
+	else if (opcionBusqueda==2){
+		string marcaBuscada;
+		cout<< "Ingrese la marca. ";
+		cin.ignore();
+		getline(cin, marcaBuscada);
+		
+		cout << "\n--- Resultados para la marca: "<< marcaBuscada<< " ---"<<endl;
+		for (int i=0; i<cantidad; i++){
+			if (catalogo[i].marca == marcaBuscada){
+				cout<< "Codigo: "<<catalogo[i].codigo<< " | Nombre: "<<catalogo[i].nombre
+					<< " | Stock: " <<catalogo[i].stock << " | Estado: "
+					<< (catalogo[i].activo ? "Activo" : "Descontinuado")<< endl;
+				encontrado = true;
+			}
+		}
+		if (!encontrado) cout<<"\nAlerta: No se encontraron productos de esta marca."<<endl;
+	}
+	else{
+		cout<<"Alerta: Opcion no valida." << endl;
+	}
 }
 
 void descontinuarProducto(Artefacto catalogo[], int cantidad){
