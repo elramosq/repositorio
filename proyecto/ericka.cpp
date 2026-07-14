@@ -4,7 +4,7 @@
 using namespace std;
 
 
-//Función para registar ventas
+//Funcion para registar ventas
 void registrarVentas(Artefacto catalogo[ ], int cantidad)
 {
 	int codigoBuscado, cantidadDeseada;
@@ -38,7 +38,7 @@ void registrarVentas(Artefacto catalogo[ ], int cantidad)
 }
 
 
-//Función para reabastecer stock
+//Funcion para reabastecer stock
 
 void reabastecerStock(Artefacto catalogo[ ], int cantidad)
 {
