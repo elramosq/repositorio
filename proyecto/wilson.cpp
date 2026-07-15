@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include<string>
 #include "wilson.h"
 using namespace std;
 //funcion para registrar el catalogo
@@ -11,14 +12,14 @@ int anadirArtefacto(Artefacto catalogo[], int cantidad) {
         cout << "--- REGISTRAR NUEVO ARTEFACTO ---" << endl;
         cout << "Ingrese codigo: ";
         cin >> catalogo[cantidad].codigo;
+        cin.ignore();
         cout << "Ingrese el nombre del producto: ";
-        cin >> catalogo[cantidad].nombre; //en este commit estamos añadiendo el nombre
+        getline(cin,catalogo[cantidad].nombre); //en este commit estamos añadiendo el nombre
         cout << "Ingrese marca: ";
-        cin >> catalogo[cantidad].marca;
-        cout << "Ingrese stock: ";
+		getline(cin,catalogo[cantidad].marca);
+		cout << "Ingrese stock: ";
         cin >> catalogo[cantidad].stock;
-        cout << "Ingrese precio: ";
-        cin >> catalogo[cantidad].precio;
+		cout << "Ingrese precio unitario (S/.): ";cin >> catalogo[cantidad].precio;
         cin.ignore();
         catalogo[cantidad].activo = true;
         cantidad = cantidad + 1;
