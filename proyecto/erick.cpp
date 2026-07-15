@@ -34,7 +34,7 @@ void buscarArtefacto(Artefacto catalogo[], int cantidad){
 				break;
 			}
 		}
-		if (!encontrado) cout<<"\nAlerta: No se encontro el codigo."<<endl;
+		if (!encontrado) cout<<"\nERROR: No se encontro el codigo."<<endl;
 	}
 	else if (opcionBusqueda==2){
 		string marcaBuscada;
@@ -51,12 +51,45 @@ void buscarArtefacto(Artefacto catalogo[], int cantidad){
 				encontrado = true;
 			}
 		}
-		if (!encontrado) cout<<"\nAlerta: No se encontraron productos de esta marca."<<endl;
+		if (!encontrado) cout<<"\nALERTA: No se encontraron productos de esta marca."<<endl;
 	}
 	else{
-		cout<<"Alerta: Opcion no valida." << endl;
+		cout<<"Error: Opcion no valida." << endl;
 	}
 }
 
 void descontinuarProducto(Artefacto catalogo[], int cantidad){
+	if (cantidad == 0) {
+        cout<< "\nALERTA: El catalogo esta vacio." <<endl;
+        return;
+    }
+    
+    int codigoBuscado;
+    cout << "\n--- DESCONTINUAR PRODUCTO ---\nIngrese el codigo: ";
+    cin >> codigoBuscado;
+
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        if (catalogo[i].codigo == codigoBuscado) {
+            encontrado = true;
+            if (!catalogo[i].activo) {
+                cout << "\nAVISO: El producto ya se encuentra descontinuado." << endl;
+            } else {
+                char confirmar;
+                cout << "Producto: " << catalogo[i].nombre << " (" << catalogo[i].marca << ")" << endl;
+                cout << "¿Seguro que desea descontinuarlo? (s/n): ";
+                cin >> confirmar;
+
+                if (confirmar == 's' || confirmar == 'S') {
+                    catalogo[i].activo = false;
+                    cout << "\n[EXITO] Producto descontinuado exitosamente." << endl;
+                } else {
+                    cout << "\n[AVISO] Operacion cancelada." << endl;
+                }
+            }
+            break;
+        }
+    }
+    if (!encontrado) cout << "\nERROR: No se encontro el codigo." << endl;
 }
