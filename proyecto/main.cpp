@@ -3,11 +3,17 @@
 #include "wilson.h"
 #include "erick.h"
 #include "ericka.h"
+#include "predatos.h"
+
 using namespace std;
 int main()
 {
     Artefacto catalogo[100];
-    int opcion = 0, cantidadProductos = 0;
+    int opcion = 0, cantidadProductos = 50;
+    
+    precargarDatos(catalogo, cantidadProductos);
+    
+    
     while(opcion != 7)
     {
         cout << "\n============SISTEMA DE VENTAS============" << endl;
