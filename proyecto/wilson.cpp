@@ -30,7 +30,7 @@ int anadirArtefacto(Artefacto catalogo[], int cantidad) {
 //funcion para mostrar el catalogo
 void mostrarCatalogo(Artefacto catalogo[], int cantidad) {
     int contador = 0;
-    cout << "--- LISTA DE ARTEFACTOS ACTIVOS ---" << endl;
+    cout << "                      --- LISTA DE ARTEFACTOS ACTIVOS ---" << endl;
     if (cantidad > 0) {
         // Ampliamos la línea a 80 guiones para que cubra toda la tabla
         cout << "--------------------------------------------------------------------------------" << endl;
