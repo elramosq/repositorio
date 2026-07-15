@@ -32,18 +32,28 @@ void mostrarCatalogo(Artefacto catalogo[], int cantidad) {
     int contador = 0;
     cout << "--- LISTA DE ARTEFACTOS ACTIVOS ---" << endl;
     if (cantidad > 0) {
-        cout << "-----------------------------------------------------" << endl;
-        cout << left << setw(12) << "CODIGO" << setw(18) << "NOMBRE" << setw(16) << "MARCA" << setw(12) << "STOCK" << "PRECIO" << endl;
-        cout << "-----------------------------------------------------" << endl;
+        // Ampliamos la línea a 80 guiones para que cubra toda la tabla
+        cout << "--------------------------------------------------------------------------------" << endl;
+        // CODIGO (12) | NOMBRE (25) | MARCA (20) | STOCK (12) | PRECIO (libre)
+        cout << left << setw(12) << "CODIGO"
+             << setw(25) << "NOMBRE"
+             << setw(20) << "MARCA"
+             << setw(12) << "STOCK"
+             << "PRECIO" << endl;
+        cout << "--------------------------------------------------------------------------------" << endl;
     }
     for (int i = 0; i < cantidad; i++) {
         if (catalogo[i].activo == true) {
-            cout << left << setw(12) << catalogo[i].codigo << setw(18) << catalogo[i].nombre << setw(16) << catalogo[i].marca << setw(12) << catalogo[i].stock << "S/. " << catalogo[i].precio << endl;
+            cout << left << setw(12) << catalogo[i].codigo
+                 << setw(25) << catalogo[i].nombre
+                 << setw(20) << catalogo[i].marca
+                 << setw(12) << catalogo[i].stock
+                 << "S/. " << catalogo[i].precio << endl;
             contador = contador + 1;
         }
     }
     if (contador > 0) {
-        cout << "-----------------------------------------------------" << endl;
+        cout << "--------------------------------------------------------------------------------" << endl;
     }
     if (contador == 0) {
         cout << "No hay artefactos registrados en el sistema." << endl;
